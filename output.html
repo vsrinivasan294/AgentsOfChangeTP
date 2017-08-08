@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<html>
+<script src="assets/js/text.js"></script>
+<script>
+(function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-84572010-2', 'auto');
+ga('send', 'pageview');
+</script>
+
+<head>
+</head>
+
+<head>
+    <title>onclass</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="shortcut icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" type="image/png" href="images/logo.png" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-loading">
+    <div id="wrapper">
+        <header id="header">
+            <a href="index.html" class="logo">reading aid</a>
+        </header>
+        <nav id="nav">
+            <ul class="links">
+                <li class="active"><a href="index.html">Home</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.facebook.com/onclass.org/" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/onclassofficial/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://www.linkedin.com/company/onclass.org" target="_blank" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            </ul>
+        </nav>
+        <div class="main">
+            <section class="post">
+                <header class="major">
+                    <h1>Reading Aid</h1>
+                    <p>A simple tool that aids people read through text</p>
+                    <br/>
+                    <span class="date"></span>
+                    <div id="container" style="position:relative;width:800;overflow:hidden;height:500px;border:0px">
+                        <div id="content" style="position:relative;width:800;left:0;top:0">
+                            <table cellpadding="0" cellspacing="0" border="0" width="700">
+                                <tr>
+                                    <td id="prom" class="teksti">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                    var step = 1;
+                    var scspeed = 20;
+                    var status = 1;
+                    var keycode;
+                    var spind = 4;
+                    document.onkeydown = checkKeycode();
+
+
+                    function checkKeycode(e) {
+                        if (window.event) keycode = window.event.keyCode;
+                        else if (e) keycode = e.which;
+
+                        switch (keycode) {
+
+                            case 32:
+                                if (status == 2 || status == 3) {
+                                    stop()
+                                    break;
+                                };
+                                if (status == 1) {
+                                    fward()
+                                    break;
+                                };
+
+                            case 38:
+                                if (status == 1 || status == 3) {
+                                    fward()
+                                    break;
+                                };
+                                if (status == 2) {
+                                    spind = spind + 1
+                                    setspeed(spind)
+                                    break;
+                                };
+
+
+                            case 40:
+                                if (status == 1) {
+                                    rverse()
+                                    break;
+                                };
+                                if (status == 2) {
+                                    spind = spind - 1
+                                    setspeed(spind)
+                                    break;
+                                };
+
+
+                        }
+                    }
+
+                    function setspeed(spind) {
+
+                        if (spind < 1) spind = 1;
+                        if (spind > 16) spind = 16;
+
+                        switch (spind) {
+                            case 1:
+                                step = 1;
+                                scspeed = 50;
+                                break;
+                            case 2:
+                                step = 2;
+                                scspeed = 40;
+                                break;
+                            case 3:
+                                step = 2;
+                                scspeed = 30;
+                                break;
+                            case 4:
+                                step = 2;
+                                scspeed = 25;
+                                break;
+                            case 5:
+                                step = 2;
+                                scspeed = 20;
+                                break;
+                            case 6:
+                                step = 3;
+                                scspeed = 40;
+                                break;
+                            case 7:
+                                step = 3;
+                                scspeed = 30;
+                                break;
+                            case 8:
+                                step = 3;
+                                scspeed = 22;
+                                break;
+                            case 9:
+                                step = 3;
+                                scspeed = 15;
+                                break;
+                            case 10:
+                                step = 3;
+                                scspeed = 10;
+                                break;
+                            case 11:
+                                step = 4;
+                                scspeed = 15;
+                                break;
+                            case 12:
+                                step = 5;
+                                scspeed = 10;
+                                break;
+                            case 13:
+                                step = 5;
+                                scspeed = 5;
+                                break;
+                            case 14:
+                                step = 7;
+                                scspeed = 5;
+                                break;
+                            case 15:
+                                step = 10;
+                                scspeed = 5;
+                                break;
+                            case 16:
+                                step = 10;
+                                scspeed = 2;
+                                break;
+                        }
+                    }
+
+
+                    document.write('</div></div>')
+                    var contentobj = document.getElementById ? document.getElementById("content") : document.all.content
+                    var contentheight = contentobj.offsetHeight
+                    if (document.getElementById && !document.all) {
+                        step = 1
+                    }
+
+
+
+                    function fward() {
+                        status = 2
+                        if (window.scrolltimerup) {
+                            clearTimeout(scrolltimerup)
+                        }
+                        if (parseInt(contentobj.style.top) >= (contentheight * (-1) + 100)) {
+                            contentobj.style.top = parseInt(contentobj.style.top) - step
+                        }
+                        scrolltimerdown = setTimeout("fward()", scspeed)
+                    }
+
+                    function rverse() {
+                        status = 3
+                        if (window.scrolltimerdown) {
+                            clearTimeout(scrolltimerdown)
+                        }
+                        if (parseInt(contentobj.style.top) <= 0) {
+                            contentobj.style.top = parseInt(contentobj.style.top) + 5
+                        }
+                        scrolltimerup = setTimeout("rverse()", scspeed)
+                    }
+
+                    function stop() {
+                        status = 1
+                        if (window.scrolltimerup) {
+                            clearTimeout(scrolltimerup)
+                        }
+                        if (window.scrolltimerdown) {
+                            clearTimeout(scrolltimerdown)
+                        }
+                    }
+
+                    function pgup() {
+                        status = 1
+                        stop()
+                        contentobj.style.top = 0
+                    }
+
+                    function getcontent_height() {
+                        contentheight = contentobj.offsetHeight
+                    }
+                    window.onload = getcontent_height
+                    </script>
+                </header>
+            </section>
+        </div>
+        <footer id="footer">
+            <section>
+                <form method="post" action="#">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" />
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" />
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="3"></textarea>
+                    </div>
+                    <ul class="actions">
+                        <li>
+                            <input type="submit" value="Send Message" />
+                        </li>
+                    </ul>
+                </form>
+            </section>
+            <section class="split contact">
+                <section class="alt">
+                    <h3>Address</h3>
+                    <p>1716 Noranda Drive
+                        <br /> Sunnyvale, CA</p>
+                </section>
+                <section>
+                    <h3>Phone</h3>
+                    <p><a href="#">(669) 246-2995</a></p>
+                </section>
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="#">deltaonclass@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    <ul class="icons alt">
+                        <li><a href="https://www.facebook.com/onclass.org/" target="_blank" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="https://www.instagram.com/onclassofficial/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="https://www.linkedin.com/company/onclass.org" target="_blank" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+        <div id="copyright">
+            <ul>
+                <li>&copy; onclass</li>
+            </ul>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+    $("#prom").text(getInput());
+    </script>
+</body>
+
+</html>
