@@ -200,169 +200,169 @@ a.control {
     var spind = 4;
 
     $(document).keydown(function(e) {
-                console.log(e.which);
-                keycode = e.which;
-                rverse();
-                switch (keycode) {
-                    case 32:
-                        if (status == 2 || status == 3) {
-                            stop();
-                            break;
-                        }
-                        if (status == 1) {
-                            fward();
-                            break;
-                        }
-
-                    case 38:
-                        if (status == 1 || status == 3) {
-                            fward()
-                            break;
-                        }
-                        if (status == 2) {
-                            spind++;
-                            setspeed(spind;
-                                break;
-                            }
-
-
-                            case 40:
-                                if (status == 1) {
-                                    rverse();
-                                    break;
-                                }
-                                if (status == 2) {
-                                    spind--:
-                                    setspeed(spind);
-                                    break;
-                                }
-                        }
-                });
-
-            function setspeed(spind) {
-
-                if (spind < 1) spind = 1;
-                if (spind > 16) spind = 16;
-
-                switch (spind) {
-                    case 1:
-                        step = 1;
-                        scspeed = 50;
-                        break;
-                    case 2:
-                        step = 2;
-                        scspeed = 40;
-                        break;
-                    case 3:
-                        step = 2;
-                        scspeed = 30;
-                        break;
-                    case 4:
-                        step = 2;
-                        scspeed = 25;
-                        break;
-                    case 5:
-                        step = 2;
-                        scspeed = 20;
-                        break;
-                    case 6:
-                        step = 3;
-                        scspeed = 40;
-                        break;
-                    case 7:
-                        step = 3;
-                        scspeed = 30;
-                        break;
-                    case 8:
-                        step = 3;
-                        scspeed = 22;
-                        break;
-                    case 9:
-                        step = 3;
-                        scspeed = 15;
-                        break;
-                    case 10:
-                        step = 3;
-                        scspeed = 10;
-                        break;
-                    case 11:
-                        step = 4;
-                        scspeed = 15;
-                        break;
-                    case 12:
-                        step = 5;
-                        scspeed = 10;
-                        break;
-                    case 13:
-                        step = 5;
-                        scspeed = 5;
-                        break;
-                    case 14:
-                        step = 7;
-                        scspeed = 5;
-                        break;
-                    case 15:
-                        step = 10;
-                        scspeed = 5;
-                        break;
-                    case 16:
-                        step = 10;
-                        scspeed = 2;
-                        break;
+        console.log(e.which);
+        keycode = e.which;
+        rverse();
+        switch (keycode) {
+            case 32:
+                if (status == 2 || status == 3) {
+                    stop();
+                    break;
                 }
-            }
+                if (status == 1) {
+                    fward();
+                    break;
+                }
+
+            case 38:
+                if (status == 1 || status == 3) {
+                    fward()
+                    break;
+                }
+                if (status == 2) {
+                    spind++;
+                    setspeed(spind);
+                    break;
+                }
 
 
-            document.write('</div></div>') var contentobj = document.getElementById ? document.getElementById("content") : document.all.content
-            var contentheight = contentobj.offsetHeight
-            if (document.getElementById && !document.all) {
+            case 40:
+                if (status == 1) {
+                    rverse();
+                    break;
+                }
+                if (status == 2) {
+                    spind--;
+                    setspeed(spind);
+                    break;
+                }
+        }
+    });
+
+    function setspeed(spind) {
+
+        if (spind < 1) spind = 1;
+        if (spind > 16) spind = 16;
+
+        switch (spind) {
+            case 1:
                 step = 1;
-            }
+                scspeed = 50;
+                break;
+            case 2:
+                step = 2;
+                scspeed = 40;
+                break;
+            case 3:
+                step = 2;
+                scspeed = 30;
+                break;
+            case 4:
+                step = 2;
+                scspeed = 25;
+                break;
+            case 5:
+                step = 2;
+                scspeed = 20;
+                break;
+            case 6:
+                step = 3;
+                scspeed = 40;
+                break;
+            case 7:
+                step = 3;
+                scspeed = 30;
+                break;
+            case 8:
+                step = 3;
+                scspeed = 22;
+                break;
+            case 9:
+                step = 3;
+                scspeed = 15;
+                break;
+            case 10:
+                step = 3;
+                scspeed = 10;
+                break;
+            case 11:
+                step = 4;
+                scspeed = 15;
+                break;
+            case 12:
+                step = 5;
+                scspeed = 10;
+                break;
+            case 13:
+                step = 5;
+                scspeed = 5;
+                break;
+            case 14:
+                step = 7;
+                scspeed = 5;
+                break;
+            case 15:
+                step = 10;
+                scspeed = 5;
+                break;
+            case 16:
+                step = 10;
+                scspeed = 2;
+                break;
+        }
+    }
+
+
+    document.write('</div></div>') var contentobj = document.getElementById ? document.getElementById("content") : document.all.content
+    var contentheight = contentobj.offsetHeight
+    if (document.getElementById && !document.all) {
+        step = 1;
+    }
 
 
 
-            function fward() {
-                status = 2
-                if (window.scrolltimerup) {
-                    clearTimeout(scrolltimerup)
-                }
-                if (parseInt(contentobj.style.top) >= (contentheight * (-1) + 100)) {
-                    contentobj.style.top = parseInt(contentobj.style.top) - step
-                }
-                scrolltimerdown = setTimeout("fward()", scspeed)
-            }
+    function fward() {
+        status = 2
+        if (window.scrolltimerup) {
+            clearTimeout(scrolltimerup);
+        }
+        if (parseInt(contentobj.style.top) >= (contentheight * (-1) + 100)) {
+            contentobj.style.top = parseInt(contentobj.style.top) - step;
+        }
+        scrolltimerdown = setTimeout("fward()", scspeed);
+    }
 
-            function rverse() {
-                status = 3
-                if (window.scrolltimerdown) {
-                    clearTimeout(scrolltimerdown)
-                }
-                if (parseInt(contentobj.style.top) <= 0) {
-                    contentobj.style.top = parseInt(contentobj.style.top) + 5
-                }
-                scrolltimerup = setTimeout("rverse()", scspeed)
-            }
+    function rverse() {
+        status = 3
+        if (window.scrolltimerdown) {
+            clearTimeout(scrolltimerdown);
+        }
+        if (parseInt(contentobj.style.top) <= 0) {
+            contentobj.style.top = parseInt(contentobj.style.top) + 5
+        }
+        scrolltimerup = setTimeout("rverse()", scspeed);
+    }
 
-            function stop() {
-                status = 1
-                if (window.scrolltimerup) {
-                    clearTimeout(scrolltimerup)
-                }
-                if (window.scrolltimerdown) {
-                    clearTimeout(scrolltimerdown)
-                }
-            }
+    function stop() {
+        status = 1
+        if (window.scrolltimerup) {
+            clearTimeout(scrolltimerup);
+        }
+        if (window.scrolltimerdown) {
+            clearTimeout(scrolltimerdown);
+        }
+    }
 
-            function pgup() {
-                status = 1
-                stop()
-                contentobj.style.top = 0
-            }
+    function pgup() {
+        status = 1;
+        stop();
+        contentobj.style.top = 0;
+    }
 
-            function getcontent_height() {
-                contentheight = contentobj.offsetHeight
-            }
-            window.onload = getcontent_height
+    function getcontent_height() {
+        contentheight = contentobj.offsetHeight;
+    }
+    window.onload = getcontent_height;
     </script>
 </body>
 
